@@ -6,6 +6,9 @@
   <p>{{content}}</p>
   <p>Created by {{user.username}} on {{format_date date_created}}</p>
   <div id="comment-section">
-    {{!-- TODO: use partial here to generate all comments under post --}}
+    {{!-- use a partial to generate all the comments under this post --}}
+    {{#each comments as |comment|}}
+    {{> all-comments comment}}
+    {{/each}}
   </div>
 </div>

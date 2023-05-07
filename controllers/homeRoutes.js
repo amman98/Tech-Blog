@@ -38,11 +38,20 @@ router.get('/post/:id', async (req, res) => {
               model: User,
               attributes: ['username'],
             },
+            {
+              model: Comment,
+              include: [
+                {
+                  model: User,
+                  attributes: ['username'],
+                },
+              ],
+            },
           ],
         });
     
         const post = postData.get({ plain: true });
-    
+
         res.render('post', {
           ...post,
           logged_in: req.session.logged_in
@@ -65,7 +74,7 @@ router.get('/post/:id/leave-comment', withAuth, async (req, res) => {
         });
     
         const post = postData.get({ plain: true });
-    
+
         res.render('add-comment', {
           ...post,
           logged_in: req.session.logged_in
