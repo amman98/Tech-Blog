@@ -1,8 +1,11 @@
 <div class="text-center">
+    <p>
+        <a href="/post/{{id}}/leave-comment">Leave A Comment</a>
+    </p>
   <h2>{{title}}</h2>
   <p>{{content}}</p>
   <p>Created by {{user.username}} on {{format_date date_created}}</p>
-  <p>
-    <button class="btn btn-primary">Leave A Comment</button>
-  </p>
+  <div id="comment-section">
+    {{!-- TODO: use partial here to generate all comments under post --}}
+  </div>
 </div>
