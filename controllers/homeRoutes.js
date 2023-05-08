@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const { writeHeapSnapshot } = require('v8');
 const { Post, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
@@ -34,6 +35,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
   try {
     // get all blog posts
     const postData = await Post.findAll({
+        where: { creator_id: req.session.user_id },
         include: [
             {
                 model: User,
@@ -50,9 +52,25 @@ router.get('/dashboard', withAuth, async (req, res) => {
         posts,
         logged_in: req.session.logged_in
     });
-} catch(err) {
-    res.status(500).json(err);
-}
+  }catch(err) {
+      res.status(500).json(err);
+  }
+});
+
+// add post
+router.get('/dashboard/add-post', withAuth, async (req, res) => {
+    try {
+      const userData = await User.findByPk(req.session.user_id);
+  
+      const user = userData.get({ plain: true });
+
+      res.render('add-post', {
+        ...user,
+        logged_in: req.session.logged_in
+      });
+  } catch (err) {
+      res.status(500).json(err);
+  }
 });
 
 // view blog post
@@ -106,9 +124,9 @@ router.get('/post/:id/leave-comment', withAuth, async (req, res) => {
           user_id: req.session.user_id,
           logged_in: req.session.logged_in
         });
-      } catch (err) {
+    } catch (err) {
         res.status(500).json(err);
-      }
+    }
 });
 
 // view login page

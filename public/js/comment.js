@@ -1,6 +1,7 @@
 const addCommentHandler = async (event) => {
     event.preventDefault();
 
+    // get all comment attributes
     const content = document.querySelector('#comment-text').value.trim();
     const date_created = new Date();
     const creator_id = parseInt(document.querySelector('#create-comment').getAttribute('data-user-id'));
