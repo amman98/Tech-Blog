@@ -28,7 +28,7 @@ body {
     display: inline-block;
 }
 
-/* all-posts.handlebars, post.handlebars */
+/* homepage.handlebars -> all-posts.handlebars, and post.handlebars */
 
 .post {
     display: flex;
@@ -41,6 +41,10 @@ body {
     display: flex;
     justify-content: space-between;
     background-color: var(--black);
+    color: var(--main-background-color);
+}
+
+.post-title {
     color: var(--main-background-color);
 }
 
@@ -62,4 +66,21 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+
+/* dashboard.handlebars -> dashboard-posts.handlebars */
+
+.dashboard-post {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--black);
+    color: var(--main-background-color);
+}
+
+#add-post {
+    color: white;
+    background-color: var(--black);
+    font-size: 40px;
+    padding: 8px;
+    border-radius: 20px;
 }
