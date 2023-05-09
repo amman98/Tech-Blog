@@ -17,6 +17,14 @@ header {
     color: var(--main-background-color);
 }
 
+#logout {
+    background-color: var(--black);
+}
+
+#logout:hover {
+    background-color: blue;
+}
+
 #title {
     background-color: var(--main-background-color);
     display: inline-block;
