@@ -1,0 +1,39 @@
+:root {
+    --main-background-color: rgb(159, 214, 159);
+    --black: black;
+}
+
+/* main.handlebars */
+
+body {
+    background-color: var(--main-background-color);
+}
+
+header {
+}
+
+#navbar * {
+    margin-left: 70px;
+    color: var(--main-background-color);
+}
+
+#title {
+    background-color: var(--main-background-color);
+    display: inline-block;
+}
+
+/* all-posts.handlebars */
+
+.post {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--main-background-color);
+    border: 3px solid var(--black);
+}
+
+.post-header {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--black);
+    color: var(--main-background-color);
+}
