@@ -127,6 +127,15 @@ body {
     margin: 5px;
 }
 
-#comment-text {
-    
+/* add-post.handlebars */
+
+#create-post {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    width: 98%;
+}
+
+.create-post-button {
+    margin-top : 12px;
 }
