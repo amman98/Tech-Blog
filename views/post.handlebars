@@ -1,10 +1,16 @@
-<div class="text-center">
+<div>
     <p>
         <a href="/post/{{id}}/leave-comment">Leave A Comment</a>
     </p>
-  <h2>{{title}}</h2>
-  <p>{{content}}</p>
-  <p>Created by {{user.username}} on {{format_date date_created}}</p>
+    <div class="row mb-4 post">
+      <div class="post-header">
+        <h2>
+          {{this.title}}
+        </h2>
+        <p>Posted by {{this.user.username}} on {{format_date this.date_created}}</p>
+      </div>
+      <p>{{this.content}}</p>
+    </div>
   <div id="comment-section">
     {{!-- use a partial to generate all the comments under this post --}}
     {{#each comments as |comment|}}
