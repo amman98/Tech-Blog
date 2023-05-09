@@ -34,7 +34,7 @@ Please refer to the LICENSE in the repo.
 
 ## Contributing
 
-Once you pull from the repo, make sure to add a '.env' file to the repo. You will want to copy the contents of the '.env.EXAMPLE' file but add your own mysql username and password.
+Once you pull from the repo, make sure to add a `.env` file to the repo. You will want to copy the contents of the `.env.EXAMPLE` file but add your own mysql username and password.
 
 ## Questions
 
