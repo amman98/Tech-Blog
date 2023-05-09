@@ -14,6 +14,7 @@ Post.init(
         title: {
             type: DataTypes.STRING,
             allowNull: false,
+            unique: true,
         },
         content: {
             type: DataTypes.TEXT,

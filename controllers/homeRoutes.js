@@ -73,6 +73,32 @@ router.get('/dashboard/add-post', withAuth, async (req, res) => {
   }
 });
 
+// edit post
+router.get('/dashboard/:id', withAuth, async (req, res) => {
+    try {
+      // TODO: ensure that post was created by user that is logged in, else render dashboard page
+      const postData = await Post.findByPk(req.params.id);
+
+      const post = postData.get({ plain: true});
+
+      // check if post was made by logged in user
+      if(req.session.user_id !== post.creator_id) {
+        res.redirect('/dashboard');
+      }
+      else {
+        res.render('edit-post', {
+          ...post,
+          logged_in: req.session.logged_in
+        });
+      }
+
+      console.log("User ID: " + req.session.user_id + ", Post User ID: " + post.creator_id);
+
+    } catch (err) {
+      res.status(500).json(err);
+    }
+})
+
 // view blog post
 router.get('/post/:id', async (req, res) => {
     try {

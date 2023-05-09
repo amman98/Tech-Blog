@@ -1,0 +1,18 @@
+<div class="row mb-4 post">
+  <div class="post-header">
+    <h2>
+      Edit Post
+    </h2>
+  </div>
+  <form id="create-post" data-user-id="{{id}}">
+      <h3>Title</h3>
+      <input type="text" id="post-title" value="{{title}}">
+
+      <h3>Content</h3>
+      <input type="text" id="post-content" value="{{content}}">
+      <button id="update-post" class="edit-post-button btn btn-primary" type="submit">Update</button>
+      <button id="delete-post" class="edit-post-button btn btn-primary" type="submit">Delete</button>
+  </form>
+</div>
+
+<script src="/js/edit-post.js"></script>

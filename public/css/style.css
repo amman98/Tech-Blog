@@ -127,7 +127,7 @@ body {
     margin: 5px;
 }
 
-/* add-post.handlebars */
+/* add-post.handlebars, edit-post.handlebars */
 
 #create-post {
     display: flex;
@@ -136,6 +136,6 @@ body {
     width: 98%;
 }
 
-.create-post-button {
+.create-post-button, .edit-post-button {
     margin-top : 12px;
 }
